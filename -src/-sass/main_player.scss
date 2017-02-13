@@ -1,0 +1,217 @@
+@import 'normalize';
+// @import 'colors';
+// @import 'fonts';
+
+// fonts variables
+$font-stack: 'Rambla', sans-serif;
+// colors variables
+$violet-solid: #60558f;
+$violet-dark: #2a224d;
+$violet-tint-divider: #d3d5de;
+$violet-bg-player: #eeeff5;
+$violet-bg-list: #f3f4f8;
+$violet-txt-name: #78747f;
+$violet-txt-title: #2f1a4b;
+$brickred-solid: #ed5e74;
+
+body {
+  background: url('../-assets/bg.jpg') no-repeat center center fixed;
+  background-size: cover;
+  font-family: $font-stack;
+}
+
+.hidden { display: none; }
+
+.playerContainer {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin: 0 auto;
+  margin-top: 100px;
+  background: #fff;
+  border-radius: 34px;
+  width: 360px;
+  height: 480px;
+}
+
+.playerBand {
+  position: absolute;
+  align-self: flex-start;
+  flex-direction: column;
+  width: 100%;
+  height: 338px;
+
+  .playlistNav {
+    position: absolute;
+    top: 0;
+    flex-direction: row;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 65px;
+    background: rgba(42, 34, 77, 0.6);
+    border-radius: 34px 34px 0 0 ;
+    z-index: 3;
+  }
+
+  .nonstopBtn, .shuffleBtn, .refreshBtn {
+    padding: 0 12px 0 12px;
+    z-index: 6;
+
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+
+  .hamburgerBtn {
+    position: absolute;
+    top: 25px;
+    right: 0px;
+    padding: 0 24px 0 0;
+    opacity: 0.3;
+    z-index: 5;
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+}
+
+.bandName {
+  position: absolute;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 65px;
+  background: rgba(42, 34, 77, 0.6);
+  z-index: 7;
+
+  .band, .tittle {
+    color: #fff;
+    z-index: 8;
+  }
+
+  .band {
+    margin: 0 0 0 0;
+    font-size: 18px;
+    font-weight: 700;
+  }
+
+  .tittle {
+    margin: 5px 0 0 0;
+    font-size: 14px;
+    font-weight: 400;
+  }
+}
+
+.imageBand {
+    position: absolute;
+    top: 0;
+    border-radius: 34px 34px 0 0 ;
+    z-index: 0;
+}
+
+.playerNav {
+  position: absolute;
+  bottom: 0;
+  background: $violet-bg-player;
+  border-radius: 0 0 34px 34px;
+  width: 100%;
+  height: 142px;
+
+  .volumeZip {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  .volumeBtn {
+    position: absolute;
+    top: -6px;
+    background: #fff;
+    border-radius: 50%;
+    box-shadow: 0 0 5px 0 rgba(0,0,0,0.2);
+    width: 22px;
+    height: 22px;
+    z-index: 9;
+  }
+
+  .volumeStatusOn, .volumeStatusOff {
+    position: absolute;
+    top: 0;
+    width: 50%;
+    height: 7px;
+  }
+
+  .volumeStatusOn {
+    left: 0;
+    background: #fff;
+    z-index: 8;
+  }
+
+  .volumeStatusOff {
+    right: 0;
+    background: $brickred-solid;
+    z-index: 7;
+  }
+
+  .bottomNav {
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 142px;
+    z-index: 6;
+  }
+
+  .bottomNav a {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    width: 36px;
+    height: 36px;
+  }
+
+  .shareBtn, .favouriteBtn {
+    position: absolute;
+    background: #fff;
+    top: 52px;
+  }
+
+  .shareBtn { left: 20px; }
+  .favouriteBtn { right: 20px; }
+
+  .previousBtn, .playBtn, .nextBtn {
+    background: $violet-solid;
+    margin: 0 10px 0 10px;
+  }
+
+  .bottomNav .playBtn {
+    width: 50px;
+    height: 50px;
+    border: 2px solid #fff;
+    z-index: 5;
+  }
+
+  .timeTrack {
+    position: absolute;
+    top: 39px;
+    left: 148px;
+    background: $violet-tint-divider;
+    border-radius: 50%;
+    width: 64px;
+    height: 64px;
+    z-index: -1;
+  }
+}
